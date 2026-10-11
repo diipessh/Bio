@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIIPESSH MISTRY | Senior Security Engineer &amp; Infrastructure Architect</title>
+  <meta name="description" content="Executive portfolio of DIIPESSH MISTRY, CISSP-certified Senior Security Engineer with 15+ years in Enterprise IT and 10+ years in cyber defense, and Founder of Exaltis Systems. Enterprise vulnerability management, cloud security architecture, and penetration testing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM: OCEAN BREEZE (PALETTE: #03045E, #0077B6, #00B4D8, #90E0EF, #CAF0F8)
+       LIGHT THEME ONLY — CLEAN, ARCHITECTURAL, POLISHED EXECUTIVE FINISH
+       ========================================================================== */
+    :root {
+      --primary-deep: #03045e;      /* Deep Sapphire Navy */
+      --primary: #0077b6;           /* Ocean Blue */
+      --accent: #00b4d8;            /* Pacific Cyan */
+      --accent-soft: #90e0ef;       /* Sky Aqua */
+      --surface-light: #caf0f8;     /* Ice Blue Tint */
+      --canvas: #f8fbfe;            /* Pure Crisp Light Canvas */
+      --card-bg: #ffffff;           /* Crisp Solid White Surface */
+      --text-main: #0a192f;         /* Deep Navy Charcoal for readability */
+      --text-secondary: #4a5d78;    /* Muted Steel Slate */
+      --text-tertiary: #6b7f99;     /* Soft Cool Grey */
+      --border-subtle: #e2edf6;     /* Clean Pale Slate Border */
+      --border-accent: rgba(0, 180, 216, 0.35);
+      --shadow-sm: 0 2px 8px rgba(3, 4, 94, 0.04);
+      --shadow-md: 0 8px 24px rgba(3, 4, 94, 0.06);
+      --shadow-lg: 0 16px 36px rgba(3, 4, 94, 0.09);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --container-max: 1240px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--canvas);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--canvas);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    section[id] {
+      scroll-margin-top: 96px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Clearance gutter on medium-to-large displays to ensure the fixed rail never overlaps content */
+    @media (min-width: 769px) and (max-width: 1400px) {
+      .container {
+        padding-left: 72px;
+      }
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION (MINIMALIST EXECUTIVE BAR)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color 0.25s ease, transform 0.2s ease;
+      position: relative;
+      padding: 6px 0;
+      display: inline-block;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Executive Resume Download Button (Replaces Clock Widget) */
+    .btn-header-resume {
+      padding: 8px 16px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      background: var(--surface-light);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-header-resume:hover {
+      background: #bcecf6;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+    }
+
+    .btn-header-resume svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
+    .btn-header-cta {
+      padding: 9px 18px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--primary-deep);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-header-cta:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.35);
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--primary-deep);
+    }
+
+    .mobile-menu-drawer {
+      display: none;
+      position: fixed;
+      top: 76px;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-lg);
+      flex-direction: column;
+      gap: 16px;
+      z-index: 999;
+    }
+
+    .mobile-menu-drawer.open {
+      display: flex;
+    }
+
+    .mobile-menu-drawer .nav-link {
+      font-size: 1.05rem;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       VERTICAL FROZEN NAME RAIL (LEFT-SIDE, CAPSULE DARK BLUE, LIGHT TEXT, ALL CAPS)
+       ========================================================================== */
+    .frozen-vertical-rail {
+      position: fixed;
+      left: 18px;
+      top: 108px;
+      z-index: 990;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 10px;
+      background: var(--primary-deep);
+      border: 1px solid rgba(144, 224, 239, 0.35);
+      border-radius: 26px;
+      box-shadow: 0 10px 28px rgba(3, 4, 94, 0.32);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s, box-shadow 0.25s ease, border-color 0.25s ease;
+      will-change: transform;
+    }
+
+    .frozen-vertical-rail.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .frozen-vertical-rail:hover {
+      box-shadow: 0 14px 34px rgba(0, 119, 182, 0.45);
+      border-color: var(--accent-soft);
+    }
+
+    .frozen-vertical-accent {
+      width: 4px;
+      height: 38px;
+      background: linear-gradient(180deg, var(--surface-light), var(--accent));
+      border-radius: 4px;
+    }
+
+    .frozen-vertical-text {
+      font-family: var(--font-sans);
+      font-size: 1.12rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--surface-light);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    @media (max-width: 1024px) {
+      .frozen-vertical-rail {
+        left: 10px;
+        padding: 14px 8px;
+      }
+      .frozen-vertical-text {
+        font-size: 0.98rem;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .frozen-vertical-rail {
+        display: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       HERO EXECUTIVE BANNER
+       ========================================================================== */
+    .hero-section {
+      padding: 80px 0 60px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--canvas) 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .status-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .static-pill {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--surface-light);
+      color: var(--primary-deep);
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .static-pill:hover {
+      background: #bcecf6;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 180, 216, 0.15);
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--primary-deep);
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-headline-sub {
+      font-size: 1.22rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 620px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 13px 28px;
+      background: var(--primary-deep);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--primary-deep);
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 119, 182, 0.32);
+    }
+
+    .btn-outline {
+      padding: 13px 26px;
+      background: #ffffff;
+      color: var(--primary-deep);
+      border: 1px solid var(--border-subtle);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--surface-light);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.14);
+    }
+
+    .executive-card-lead {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .executive-card-lead:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(3, 4, 94, 0.1);
+      border-color: var(--border-accent);
+    }
+
+    .executive-card-lead::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-deep), var(--primary), var(--accent));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .lead-card-header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .lead-card-header h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+    }
+
+    .lead-card-header p {
+      font-size: 0.88rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .executive-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .metric-box {
+      background: var(--canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .metric-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 8px 20px rgba(0, 119, 182, 0.14);
+      background: #ffffff;
+    }
+
+    .metric-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      line-height: 1;
+      margin-bottom: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .metric-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .firm-affiliation {
+      background: #f0f8fd;
+      border-left: 3px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      transition: all 0.25s ease;
+    }
+
+    .firm-affiliation:hover {
+      background: #e6f4fc;
+      transform: translateX(4px);
+      border-left-color: var(--accent);
+    }
+
+    .firm-affiliation-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .firm-affiliation-title a {
+      color: var(--primary);
+      text-decoration: underline;
+      font-size: 0.82rem;
+      transition: color 0.2s ease;
+    }
+
+    .firm-affiliation-title a:hover {
+      color: var(--primary-deep);
+    }
+
+    .firm-affiliation-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+    .section-wrap {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       PROFESSIONAL TRACK RECORD & EXPERIENCE (ENHANCED HOVER)
+       ========================================================================== */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .experience-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .experience-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 16px 36px rgba(0, 119, 182, 0.14);
+      transform: translateY(-5px);
+    }
+
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role-group h4 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+    }
+
+    .exp-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .exp-duration {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-deep);
+      background: var(--surface-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .exp-location {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+
+    .exp-bullet-list {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exp-bullet-list li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .exp-bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      color: var(--accent);
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .tech-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      background: var(--canvas);
+      color: var(--primary-deep);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .tech-pill:hover {
+      background: var(--surface-light);
+      border-color: var(--accent);
+      color: var(--primary-deep);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       EDUCATION & CERTIFICATIONS (ENHANCED HOVER)
+       ========================================================================== */
+    .edu-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+
+    .panel-box {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .panel-box:hover {
+      box-shadow: 0 14px 34px rgba(3, 4, 94, 0.08);
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+    }
+
+    .panel-box h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .edu-item {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed var(--border-subtle);
+      transition: transform 0.2s ease;
+    }
+
+    .edu-item:hover {
+      transform: translateX(4px);
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .edu-degree {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+    }
+
+    .edu-school {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cert-item:hover {
+      border-color: var(--primary);
+      background: #ffffff;
+      transform: translateX(8px);
+      box-shadow: 0 6px 18px rgba(0, 119, 182, 0.12);
+    }
+
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .cert-status-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      background: var(--surface-light);
+      color: var(--primary-deep);
+      border-radius: 4px;
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       TECHNICAL ARSENAL (COMPREHENSIVE MATRIX ACROSS ALL DOMAINS)
+       ========================================================================== */
+    .skills-filter-nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .skills-filter-btn {
+      padding: 8px 18px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .skills-filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.12);
+    }
+
+    .skills-filter-btn.active {
+      background: var(--primary-deep);
+      border-color: var(--primary-deep);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(3, 4, 94, 0.2);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .skill-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 12px 28px rgba(0, 119, 182, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .skill-category-title {
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .skill-card-name {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 8px;
+    }
+
+    .skill-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       PRACTICE SERVICES & SPECIALTIES (ENHANCED HOVER)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 16px 36px rgba(0, 119, 182, 0.18);
+      transform: translateY(-6px);
+    }
+
+    .service-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .service-description {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-deliverables {
+      list-style: none;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-deliverables li {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .service-deliverables li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE SCOPE ESTIMATOR
+       ========================================================================== */
+    .calculator-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-md);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .calculator-wrapper:hover {
+      box-shadow: 0 12px 32px rgba(3, 4, 94, 0.08);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .calc-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .calc-group label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      margin-bottom: 8px;
+    }
+
+    .calc-select, .calc-range {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      background: var(--canvas);
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .calc-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+    }
+
+    .calc-range {
+      padding: 0;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .calc-range-output {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-top: 6px;
+    }
+
+    .calc-results-box {
+      background: var(--canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .calc-results-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(3, 4, 94, 0.06);
+    }
+
+    .calc-results-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+
+    .calc-results-model {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-deep);
+      margin-bottom: 12px;
+    }
+
+    .calc-stat-summary {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      margin-bottom: 24px;
+      text-align: left;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       CONTACT & EXECUTIVE DISPATCH TERMINAL (ORIGINAL TWO-COLUMN PRESERVED)
+       ========================================================================== */
+    .contact-card-main {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .contact-card-main:hover {
+      box-shadow: 0 14px 36px rgba(3, 4, 94, 0.09);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform 0.25s ease;
+    }
+
+    .contact-info-item:hover {
+      transform: translateX(4px);
+    }
+
+    .contact-info-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--surface-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .contact-info-item:hover .contact-info-icon {
+      background: var(--primary);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .contact-info-label {
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 700;
+    }
+
+    .contact-info-value {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      margin-top: 2px;
+    }
+
+    .contact-info-value a {
+      color: var(--primary-deep);
+      transition: color 0.2s ease;
+    }
+
+    .contact-info-value a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary-deep);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      background: var(--canvas);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      color: var(--text-main);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-feedback {
+      display: none;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: #fdf2f2;
+      border: 1px solid #f8b4b4;
+      color: #9b1c1c;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: #edfbf7;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 44px 0 32px;
+    }
+
+    .footer-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-left p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+    }
+
+    .footer-meta a {
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .footer-meta a:hover {
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid, .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .edu-certs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu, .btn-header-cta {
+        display: none;
+      }
+      .mobile-nav-toggle {
+        display: block;
+      }
+      .hero-title {
+        font-size: 2.4rem;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .calculator-wrapper, .contact-card-main, .panel-box {
+        padding: 24px;
+      }
+      .executive-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER (NO SHIELD, NO NAME/CISSP/TITLE, NO EXALTIS WORDMARK, NO SCOPE IN HEADER)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      
+      <ul class="nav-menu">
+        <li><a href="#overview" class="nav-link active">Overview</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#credentials" class="nav-link">Education &amp; Certs</a></li>
+        <li><a href="#skills" class="nav-link">Technical Arsenal</a></li>
+        <li><a href="#services" class="nav-link">Practice Areas</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Suggestion #2: Executive Resume Download Button (Replaces Clock Widget) -->
+        <a href="Resume_Diipessh_Mistry.pdf" download="Resume_Diipessh_Mistry.pdf" class="btn-header-resume" title="Download Executive Resume (PDF)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Resume PDF
+        </a>
+
+        <a href="#contact" class="btn-header-cta">
+          Consultation
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-drawer">
+      <a href="#overview" class="nav-link mobile-link">Overview</a>
+      <a href="#experience" class="nav-link mobile-link">Experience</a>
+      <a href="#credentials" class="nav-link mobile-link">Education &amp; Certs</a>
+      <a href="#skills" class="nav-link mobile-link">Technical Arsenal</a>
+      <a href="#services" class="nav-link mobile-link">Practice Areas</a>
+      <a href="#contact" class="nav-link mobile-link">Direct Contact</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LEFT-SIDE VERTICAL FROZEN NAME RAIL
+       Slides smoothly along the Y-axis to match scroll pace, all caps
+       ========================================================================== -->
+  <aside id="frozen-vertical-rail" class="frozen-vertical-rail" aria-hidden="true">
+    <div class="frozen-vertical-accent"></div>
+    <div class="frozen-vertical-text">DIIPESSH MISTRY</div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION: EXECUTIVE OVERVIEW
+         ========================================================================== -->
+    <section class="hero-section" id="overview">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="status-badge-row">
+              <span class="static-pill">Calgary, Alberta, Canada</span>
+              <span class="static-pill">M.Eng (Computer Networks)</span>
+              <span class="static-pill">CISSP-Certified</span>
+            </div>
+
+            <!-- Hero Name Anchor ID for Scroll Trigger -->
+            <h1 class="hero-title" id="hero-name-original">DIIPESSH MISTRY</h1>
+            <h2 class="hero-headline-sub">Senior Security Engineer &bull; Vulnerability Management &bull; Cloud Security Architect</h2>
+
+            <p class="hero-bio">
+              Over 15+ years of cross-domain IT infrastructure and security engineering experience, with 10+ years dedicated to cyber defense, vulnerability discovery, remediation pipelines, and attack surface elimination across multi-cloud (Azure, Google Cloud Platform, AWS), Windows, Linux, and industrial ICS/OT environments. Proven leadership serving Government of Canada critical assets, enterprise telematics, and high-assurance digital platforms.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#contact" class="btn-primary">
+                Initiate Executive Engagement
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#experience" class="btn-outline">View Career Trajectory</a>
+            </div>
+          </div>
+
+          <!-- Executive Summary Card -->
+          <div class="executive-card-lead">
+            <div class="lead-card-header">
+              <h3>Core Practice Profile</h3>
+              <p>Independent Advisory &amp; Enterprise Security Engineering</p>
+            </div>
+
+            <div class="executive-metrics-grid">
+              <div class="metric-box">
+                <div class="metric-value">15+</div>
+                <div class="metric-label">Years in Enterprise IT</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">10+</div>
+                <div class="metric-label">Years Cyber Defense</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Automated Remediation</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Multi-Cloud</div>
+                <div class="metric-label">Azure &bull; GCP &bull; AWS</div>
+              </div>
+            </div>
+
+            <div class="firm-affiliation">
+              <div class="firm-affiliation-title">
+                <span>Founder &amp; Chief Architect</span>
+                <a href="https://exaltissystems.com" target="_blank" rel="noopener noreferrer">exaltissystems.com &rarr;</a>
+              </div>
+              <div class="firm-affiliation-desc">
+                Leading <strong>Exaltis Systems</strong> in architecting managed vulnerability posture management, vCISO advisory, and cloud infrastructure security frameworks.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROFESSIONAL EXPERIENCE & CAREER TRAJECTORY
+         ========================================================================== -->
+    <section class="section-wrap" id="experience">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Career Trajectory</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">
+            Demonstrated track record of delivering enterprise-scale threat protection, vulnerability automation, and security posture engineering across high-stakes environments.
+          </p>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Current Engagement: Infosys Public Services -->
+          <article class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Technology Lead - Security</h4>
+                <div class="exp-company">Infosys Public Services &bull; Government of Canada Engagement</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-duration">Jan 2025 – Present</span>
+                <span class="exp-location">Calgary, AB (Remote)</span>
+              </div>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Protect and harden internet-facing web assets and the cloud platform hosting the client's most critical public sector systems, closing misconfigurations before breaching compliance baselines.</li>
+              <li>Drive vulnerability management: execute recurring scans, steer remediation workflows with system owners, and report exposure through risk-management dashboards and executive briefings.</li>
+              <li>Detect and respond: analyze Microsoft Sentinel telemetry to identify and intercept bot attacks, malicious crawlers, and hostile activity targeting public assets.</li>
+              <li>Analyze malware samples and publish threat intelligence reports covering phishing, DLP events, and incidents induced by misconfigured cloud systems.</li>
+              <li>Designed phishing and vishing simulation programs and security awareness campaigns, complete with metric tracking dashboards presented directly to executive leadership.</li>
+            </ul>
+            <div class="tech-pill-row">
+              <span class="tech-pill">Microsoft Sentinel</span>
+              <span class="tech-pill">Azure Security</span>
+              <span class="tech-pill">Vulnerability Remediation</span>
+              <span class="tech-pill">ITSG-33</span>
+              <span class="tech-pill">Threat Intelligence</span>
+              <span class="tech-pill">Malware Analysis</span>
+            </div>
+          </article>
+
+          <!-- Geotab Inc. -->
+          <article class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Senior Security Administrator / Security System Administrator</h4>
+                <div class="exp-company">Geotab Inc.</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-duration">May 2019 – Jan 2025 (5.5+ Years)</span>
+                <span class="exp-location">Remote / Global Fleet Telematics</span>
+              </div>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Automated vulnerability scanning and reporting via Bash and RESTful API integrations across Tenable.io (Nessus) and Qualys; automated Google Cloud Platform firewall rule configuration and asset tagging.</li>
+              <li>Conducted technical security assessments and penetration tests; architected robust security controls across AWS and GCP environments with timely remediation pipelines.</li>
+              <li>Executed comprehensive security design and impact reviews on proposed architectures before release to neutralize regressions and integrated automated security gates into CI/CD pipelines.</li>
+              <li>Enforced strict least-privilege access governance on Google Cloud (IAM, RBAC, service accounts, Cloud Firewall) and automated role provisioning through custom PowerShell and Bash portals.</li>
+              <li>Deployed and managed enterprise security tooling across the fleet: CrowdStrike Falcon, Tenable Nessus agents, Duo MFA, Splunk SIEM, and Zscaler.</li>
+              <li>Automated vulnerability audits, patch management, and baseline system hardening across heterogeneous operating systems (Windows, Linux) and network infrastructure.</li>
+            </ul>
+            <div class="tech-pill-row">
+              <span class="tech-pill">Google Cloud Platform</span>
+              <span class="tech-pill">AWS</span>
+              <span class="tech-pill">Tenable.io</span>
+              <span class="tech-pill">Qualys</span>
+              <span class="tech-pill">CrowdStrike Falcon</span>
+              <span class="tech-pill">Splunk SIEM</span>
+              <span class="tech-pill">Bash Automation</span>
+              <span class="tech-pill">Duo MFA</span>
+              <span class="tech-pill">Zscaler</span>
+            </div>
+          </article>
+
+          <!-- BBA Engineering Ltd. -->
+          <article class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Cybersecurity Specialist - ICS</h4>
+                <div class="exp-company">BBA Engineering Ltd.</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-duration">Nov 2019 – Apr 2020</span>
+                <span class="exp-location">Calgary, AB</span>
+              </div>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Formulated industrial control system (ICS/OT) site-assessment methodologies to expose vulnerability postures and threat vectors across operational technology environments.</li>
+              <li>Authored compliance-ready consulting assessments and architecture roadmaps for mission-critical instrumentation, safety systems, and industrial networking.</li>
+              <li>Standardized reusable assessment templates, oversaw patch deployment procedures, and implemented advanced threat detection tooling within SCADA ecosystems.</li>
+            </ul>
+            <div class="tech-pill-row">
+              <span class="tech-pill">ICS / SCADA Security</span>
+              <span class="tech-pill">OT Risk Assessment</span>
+              <span class="tech-pill">Site Audit Methodologies</span>
+              <span class="tech-pill">Safety Instrumented Systems</span>
+            </div>
+          </article>
+
+          <!-- Uzado Inc. -->
+          <article class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Security Operations Center Analyst</h4>
+                <div class="exp-company">Uzado Inc.</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-duration">Mar 2019 – May 2019</span>
+                <span class="exp-location">Vaughan, ON</span>
+              </div>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Conducted vulnerability scanning, prioritized remediation tracking, and compliance validation utilizing Qualys.</li>
+              <li>Analyzed SIEM telemetry, deep network traffic packet captures, and host security event logs to generate actionable intelligence for stakeholders.</li>
+            </ul>
+            <div class="tech-pill-row">
+              <span class="tech-pill">SOC Operations</span>
+              <span class="tech-pill">Qualys VM</span>
+              <span class="tech-pill">SIEM Analysis</span>
+              <span class="tech-pill">Network Traffic Analysis</span>
+            </div>
+          </article>
+
+          <!-- WBM Technologies Inc. -->
+          <article class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-group">
+                <h4>Senior Systems Analyst / Team Lead</h4>
+                <div class="exp-company">WBM Technologies Inc.</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-duration">Oct 2013 – Aug 2018 (5 Years)</span>
+                <span class="exp-location">Calgary, AB / Regina, SK</span>
+              </div>
+            </div>
+            <ul class="exp-bullet-list">
+              <li>Resolved critical escalated operational and security incidents, monitored attack trends, and maintained enterprise firewall and IDS/IPS controls across data centers.</li>
+              <li>Led the province-wide executive rollout of the Government of Saskatchewan Next Generation Desktop and MDM platform, overseeing engineering personnel, incident workflows, and crisis simulation exercises.</li>
+            </ul>
+            <div class="tech-pill-row">
+              <span class="tech-pill">Firewall &amp; IDS/IPS</span>
+              <span class="tech-pill">Enterprise MDM</span>
+              <span class="tech-pill">Incident Management</span>
+              <span class="tech-pill">Public Sector Deployments</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION & CERTIFICATIONS (CLEAN, ACCURATE, 'ACTIVE' REMOVED)
+         ========================================================================== -->
+    <section class="section-wrap" id="credentials">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Formal Qualifications</span>
+          <h2 class="section-title">Education &amp; Industry Certifications</h2>
+          <p class="section-subtitle">
+            Rigorous academic foundation in computer networking coupled with globally recognized vendor and governance certifications.
+          </p>
+        </div>
+
+        <div class="edu-certs-grid">
+          
+          <!-- Education Column -->
+          <div class="panel-box">
+            <h3>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+              Academic Credentials
+            </h3>
+
+            <div class="edu-item">
+              <div class="edu-degree">Master of Engineering (M.Eng) in Computer Networks</div>
+              <div class="edu-school">Toronto Metropolitan University (formerly Ryerson University)</div>
+              <div class="edu-year">Toronto, ON &bull; Conferred October 2019</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-degree">Post-Graduate Diploma, Information Technology Professionals</div>
+              <div class="edu-school">Lambton College of Applied Arts and Technology</div>
+              <div class="edu-year">Sarnia, ON &bull; Conferred December 2011</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-degree">Bachelor of Technology (B.Tech) in Computer Engineering</div>
+              <div class="edu-school">Ganpat University</div>
+              <div class="edu-year">Gujarat, India &bull; Conferred August 2009</div>
+            </div>
+          </div>
+
+          <!-- Professional Certifications Column -->
+          <div class="panel-box">
+            <h3>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+              Professional Certifications
+            </h3>
+
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">CISSP &ndash; Certified Information Systems Security Professional</div>
+                <div class="cert-issuer">(ISC)² &bull; Global Cybersecurity Leadership Standard</div>
+              </div>
+              <span class="cert-status-badge">Credentialed</span>
+            </div>
+
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">CCNA Routing &amp; Switching &bull; CCNA Security</div>
+                <div class="cert-issuer">Cisco Systems &bull; Enterprise Network Defense</div>
+              </div>
+              <span class="cert-status-badge">Certified</span>
+            </div>
+
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">MCSA &ndash; Microsoft Certified Solutions Associate</div>
+                <div class="cert-issuer">Microsoft &bull; Server Infrastructure &amp; Identity</div>
+              </div>
+              <span class="cert-status-badge">Certified</span>
+            </div>
+
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">CompTIA Network+ &bull; CompTIA Project+</div>
+                <div class="cert-issuer">CompTIA &bull; Network Architecture &amp; Delivery Management</div>
+              </div>
+              <span class="cert-status-badge">Certified</span>
+            </div>
+
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">Fortinet Network Security Expert (NSE 1, 2 &amp; 3)</div>
+                <div class="cert-issuer">Fortinet &bull; Firewall &amp; Perimeter Security</div>
+              </div>
+              <span class="cert-status-badge">Certified</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       TECHNICAL ARSENAL (COMPREHENSIVE MATRIX ACROSS ALL DOMAINS)
+       ========================================================================== -->
+    <section class="section-wrap" id="skills">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Competencies &amp; Stack</span>
+          <h2 class="section-title">Technical Arsenal</h2>
+          <p class="section-subtitle">
+            Battle-tested engineering competencies across enterprise security platforms, orchestration scripting, and regulatory controls.
+          </p>
+        </div>
+
+        <div class="skills-filter-nav">
+          <button class="skills-filter-btn active" data-filter="all">All Disciplines</button>
+          <button class="skills-filter-btn" data-filter="cloud">Cloud &amp; IAM</button>
+          <button class="skills-filter-btn" data-filter="vuln">Vulnerability &amp; SIEM</button>
+          <button class="skills-filter-btn" data-filter="automation">Automation &amp; CI/CD</button>
+          <button class="skills-filter-btn" data-filter="compliance">Compliance &amp; ICS/OT</button>
+        </div>
+
+        <div class="skills-grid" id="skills-matrix">
+          
+          <!-- Card 1: Vulnerability Assessment & Scanners -->
+          <div class="skill-card" data-category="vuln">
+            <div class="skill-category-title">Vulnerability Discovery</div>
+            <div class="skill-card-name">Tenable.io &amp; Qualys VM</div>
+            <div class="skill-card-desc">End-to-end scanning orchestration, API automation, vulnerability prioritization, and enterprise patch verification.</div>
+          </div>
+
+          <!-- Card 2: Cloud Platform Security -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-category-title">Multi-Cloud Security</div>
+            <div class="skill-card-name">GCP, Azure &amp; AWS Hardening</div>
+            <div class="skill-card-desc">Strict least-privilege IAM, service account posture, Cloud Firewall rule optimization, and multi-tenant isolation.</div>
+          </div>
+
+          <!-- Card 3: SIEM & Detection -->
+          <div class="skill-card" data-category="vuln">
+            <div class="skill-category-title">Detection &amp; SIEM</div>
+            <div class="skill-card-name">Microsoft Sentinel &amp; Splunk</div>
+            <div class="skill-card-desc">KQL analytics, threat hunting queries, automated alert correlation, and hostile bot interception.</div>
+          </div>
+
+          <!-- Card 4: Endpoint & Identity Zero Trust -->
+          <div class="skill-card" data-category="vuln cloud">
+            <div class="skill-category-title">Endpoint &amp; Zero Trust</div>
+            <div class="skill-card-name">CrowdStrike, Zscaler &amp; Duo</div>
+            <div class="skill-card-desc">Falcon EDR enterprise management, cloud-delivered proxy filtering, and multi-factor access authentication.</div>
+          </div>
+
+          <!-- Card 5: Automation Scripting -->
+          <div class="skill-card" data-category="automation">
+            <div class="skill-category-title">Security Automation</div>
+            <div class="skill-card-name">Bash &amp; PowerShell Scripting</div>
+            <div class="skill-card-desc">Automated vulnerability reporting pipelines, REST API workflows, and custom role provisioning portals.</div>
+          </div>
+
+          <!-- Card 6: DevSecOps Pipelines -->
+          <div class="skill-card" data-category="automation cloud">
+            <div class="skill-category-title">DevSecOps Integration</div>
+            <div class="skill-card-name">CI/CD Pipeline Security Gates</div>
+            <div class="skill-card-desc">Pre-commit vulnerability auditing, dynamic application analysis, and container security integration.</div>
+          </div>
+
+          <!-- Card 7: DAST & Application Defense -->
+          <div class="skill-card" data-category="vuln automation">
+            <div class="skill-category-title">Application Security</div>
+            <div class="skill-card-name">Aqua &amp; Netsparker DAST</div>
+            <div class="skill-card-desc">Dynamic application scanning, container image posture audits, and web application attack surface minimization.</div>
+          </div>
+
+          <!-- Card 8: Network Perimeter & Firewalls -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-category-title">Network Defense</div>
+            <div class="skill-card-name">FortiGate, SonicWall &amp; IDS/IPS</div>
+            <div class="skill-card-desc">Deep packet inspection, enterprise gateway policies, intrusion detection/prevention, and perimeter defense baselining.</div>
+          </div>
+
+          <!-- Card 9: Canadian Public Sector Compliance -->
+          <div class="skill-card" data-category="compliance">
+            <div class="skill-category-title">Public Sector Compliance</div>
+            <div class="skill-card-name">ITSG-33 &amp; Government of Canada PBMM</div>
+            <div class="skill-card-desc">Government of Canada security control cataloging, FedRAMP alignment, SOC 2 readiness, and risk reporting.</div>
+          </div>
+
+          <!-- Card 10: Enterprise Governance Standards -->
+          <div class="skill-card" data-category="compliance">
+            <div class="skill-category-title">Enterprise Governance</div>
+            <div class="skill-card-name">SOC 2, ISO 27001 &amp; CMMC L2</div>
+            <div class="skill-card-desc">Multi-cloud compliance alignment, security controls gap analysis, audit readiness, and technical evidence validation.</div>
+          </div>
+
+          <!-- Card 11: Operational Technology & ICS/SCADA -->
+          <div class="skill-card" data-category="compliance">
+            <div class="skill-category-title">Industrial Security</div>
+            <div class="skill-card-name">ICS / SCADA Posture Assessment</div>
+            <div class="skill-card-desc">Operational technology security methodologies, safety instrumentation analysis, and segmented zone audits.</div>
+          </div>
+
+          <!-- Card 12: Human Risk & Social Engineering -->
+          <div class="skill-card" data-category="compliance">
+            <div class="skill-category-title">Human Risk Engineering</div>
+            <div class="skill-card-name">KnowBe4 Phishing &amp; Vishing</div>
+            <div class="skill-card-desc">High-fidelity simulation campaign design, executive risk briefings, and metric-tracked employee awareness programs.</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRACTICE SERVICES & SPECIALTIES (ENHANCED HOVER)
+         ========================================================================== -->
+    <section class="section-wrap" id="services">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Consulting &amp; Architecture</span>
+          <h2 class="section-title">Practice Areas</h2>
+          <p class="section-subtitle">
+            Strategic cyber advisory, automated vulnerability operations, and enterprise defense offered through Exaltis Systems.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div>
+              <div class="service-num">PRACTICE // 01</div>
+              <h3 class="service-title">Enterprise Vulnerability Management</h3>
+              <p class="service-description">
+                Building scalable, repeatable vulnerability discovery pipelines. Automating scanning routines across Tenable and Qualys with programmatic ticket creation and stakeholder reporting.
+              </p>
+            </div>
+            <ul class="service-deliverables">
+              <li>API-driven scanning automation</li>
+              <li>Risk-based triage &amp; scoring</li>
+              <li>Executive vulnerability scorecards</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <div class="service-num">PRACTICE // 02</div>
+              <h3 class="service-title">Cloud Infrastructure Hardening</h3>
+              <p class="service-description">
+                Securing Microsoft Azure and Google Cloud environments against configuration drift and lateral movement. Rigorous enforcement of least-privilege IAM and granular Cloud Firewall governance.
+              </p>
+            </div>
+            <ul class="service-deliverables">
+              <li>IAM &amp; RBAC privilege reduction</li>
+              <li>Cloud perimeter firewall auditing</li>
+              <li>Multi-cloud compliance alignment</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <div class="service-num">PRACTICE // 03</div>
+              <h3 class="service-title">vCISO &amp; Regulatory Alignment</h3>
+              <p class="service-description">
+                Executive cybersecurity oversight for scaling organizations and public sector contractors. Navigating complex compliance baselines including ITSG-33, PBMM, ISO 27001, and SOC 2.
+              </p>
+            </div>
+            <ul class="service-deliverables">
+              <li>Security design &amp; impact reviews</li>
+              <li>Audit readiness &amp; Gap mitigation</li>
+              <li>Executive &amp; Board-level risk reporting</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE SCOPE ESTIMATOR
+         ========================================================================== -->
+    <section class="section-wrap" id="scope-calculator">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Engagement Estimator</span>
+          <h2 class="section-title">Security Architecture Scope Estimator</h2>
+          <p class="section-subtitle">
+            Calculate estimated engineering capacity, engagement model, and governance deliverables tailored to your organizational scale.
+          </p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <div class="calc-grid">
+            
+            <div class="calc-controls">
+              <div class="calc-group">
+                <label for="calc-service">Primary Focus Area</label>
+                <select id="calc-service" class="calc-select">
+                  <option value="vm">Vulnerability Management &amp; Scanning Automation</option>
+                  <option value="cloud">Cloud Security Architecture (GCP / Azure)</option>
+                  <option value="vciso">vCISO Compliance &amp; Security Governance (ITSG-33 / SOC 2)</option>
+                  <option value="ot">ICS / SCADA Industrial Security Assessment</option>
+                </select>
+              </div>
+
+              <div class="calc-group">
+                <label for="calc-endpoints">Asset Footprint (<span id="calc-asset-count">150</span> Endpoints / Cloud Resources)</label>
+                <input type="range" id="calc-endpoints" class="calc-range" min="20" max="1500" step="10" value="150">
+                <div class="calc-range-output">
+                  <span>Small Business (20)</span>
+                  <span>Mid-Market (500)</span>
+                  <span>Enterprise (1,500+)</span>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <label for="calc-compliance">Compliance Baseline</label>
+                <select id="calc-compliance" class="calc-select">
+                  <option value="baseline">Standard CIS Benchmarks / Cyber Essentials</option>
+                  <option value="itsg">ITSG-33 / Government of Canada PBMM</option>
+                  <option value="soc">SOC 2 / ISO 27001 Governance</option>
+                  <option value="fedramp">FedRAMP / CMMC Level 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-results-box">
+              <div class="calc-results-label">Recommended Architecture Model</div>
+              <div class="calc-results-model" id="calc-output-model">Directed Sprint (4–6 Weeks)</div>
+              
+              <div class="calc-stat-summary" id="calc-output-summary">
+                Designed for standard infrastructures: API automated scanning pipelines, least-privilege IAM hardening, and an executive gap-remediation roadmap.
+              </div>
+
+              <a href="#contact" class="btn-primary" style="width: 100%; justify-content: center;" id="calc-apply-cta">
+                Apply to Engagement Request
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       CONTACT & EXECUTIVE DISPATCH TERMINAL (ORIGINAL TWO-COLUMN PRESERVED)
+       ========================================================================== -->
+    <section class="section-wrap" id="contact">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Direct Communication</span>
+          <h2 class="section-title">Initiate Consultation</h2>
+          <p class="section-subtitle">
+            Available for enterprise security advisory, vulnerability architecture engagements, and confidential consultations.
+          </p>
+        </div>
+
+        <div class="contact-card-main">
+          <div class="contact-grid">
+            
+            <div class="contact-left">
+              <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-deep);">Direct Contact Details</h3>
+              <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 6px;">
+                Direct inquiries are typically acknowledged within 1 business day (Mountain Time).
+              </p>
+
+              <div class="contact-info-list">
+                
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-info-label">Direct Email</div>
+                    <div class="contact-info-value">
+                      <a href="mailto:diipessh@gmail.com">diipessh@gmail.com</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-info-label">Direct Telephone</div>
+                    <div class="contact-info-value">
+                      <a href="tel:3064500421">+1 (306) 450-0421</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-info-label">LinkedIn Profile</div>
+                    <div class="contact-info-value">
+                      <a href="https://www.linkedin.com/in/diipessh" target="_blank" rel="noopener noreferrer">linkedin.com/in/diipessh</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-info-label">Corporate Platform</div>
+                    <div class="contact-info-value">
+                      <a href="https://exaltissystems.com" target="_blank" rel="noopener noreferrer">exaltissystems.com</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Interactive Form with Web3Forms & OWASP Strict Validation -->
+            <form class="contact-form" id="consultation-form" novalidate>
+              <div id="form-error-banner" class="form-feedback error" role="alert" style="display: none;"></div>
+
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Sarah Jenkins" required maxlength="80" autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Corporate Email *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. sjenkins@enterprise.com" required maxlength="120" autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Engagement Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="e.g. Vulnerability Architecture / Cloud Audit" maxlength="150">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Project Scope / Requirements *</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Detail your infrastructure scale, compliance drivers, and targeted start date..." required maxlength="3000"></textarea>
+              </div>
+
+              <button type="submit" id="contact-submit-btn" class="btn-primary" style="justify-content: center; padding: 14px;">
+                Dispatch Consultation Request
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-flex">
+        <div class="footer-left">
+          <p>&copy; 2026 DIIPESSH MISTRY. All rights reserved. &bull; Calgary, Alberta, Canada</p>
+        </div>
+        <div class="footer-meta">
+          <a href="https://exaltissystems.com" target="_blank" rel="noopener noreferrer">Exaltis Systems</a>
+          <span>&bull;</span>
+          <a href="https://www.linkedin.com/in/diipessh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span>&bull;</span>
+          <a href="mailto:diipessh@gmail.com">diipessh@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS: SMOOTH VERTICAL GLIDE & WEB3FORMS INTEGRATION
+       ========================================================================== -->
+  <script>
+    // 1. Left-Side Vertical Rail: Reveals when scrolling past hero name and glides smoothly with scroll
+    var heroTitle = document.getElementById('hero-name-original');
+    var verticalRail = document.getElementById('frozen-vertical-rail');
+
+    function updateVerticalRail() {
+      if (!verticalRail) return;
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      
+      var shouldActivate = false;
+      if (heroTitle) {
+        var rect = heroTitle.getBoundingClientRect();
+        if (rect.bottom < 85) {
+          shouldActivate = true;
+        }
+      } else if (scrollY > 140) {
+        shouldActivate = true;
+      }
+
+      if (shouldActivate) {
+        verticalRail.classList.add('is-active');
+        verticalRail.setAttribute('aria-hidden', 'false');
+
+        var totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+          var scrollRatio = Math.min(Math.max(scrollY / totalHeight, 0), 1);
+          var railHeight = verticalRail.offsetHeight || 260;
+          var maxTravel = Math.max(0, window.innerHeight - 130 - railHeight);
+          var targetY = scrollRatio * maxTravel;
+          verticalRail.style.transform = 'translate3d(0, ' + targetY + 'px, 0)';
+        }
+      } else {
+        verticalRail.classList.remove('is-active');
+        verticalRail.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    window.addEventListener('scroll', updateVerticalRail, { passive: true });
+    window.addEventListener('resize', updateVerticalRail);
+    updateVerticalRail();
+
+    // 2. Mobile Navigation Drawer Toggle
+    var mobileToggle = document.getElementById('mobile-toggle');
+    var mobileDrawer = document.getElementById('mobile-drawer');
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', function() {
+        mobileDrawer.classList.toggle('open');
+      });
+      document.querySelectorAll('.mobile-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileDrawer.classList.remove('open');
+        });
+      });
+    }
+
+    // 3. Technical Arsenal Category Filter (Multi-tag supporting logic)
+    var filterButtons = document.querySelectorAll('.skills-filter-btn');
+    var skillCards = document.querySelectorAll('.skill-card');
+
+    filterButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterButtons.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var filterValue = btn.getAttribute('data-filter');
+        skillCards.forEach(function(card) {
+          var cardCategories = (card.getAttribute('data-category') || '').split(' ');
+          if (filterValue === 'all' || cardCategories.indexOf(filterValue) !== -1) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 4. Interactive Scope Estimator Logic
+    var serviceSelect = document.getElementById('calc-service');
+    var endpointsRange = document.getElementById('calc-endpoints');
+    var assetCountLabel = document.getElementById('calc-asset-count');
+    var complianceSelect = document.getElementById('calc-compliance');
+    var modelOutput = document.getElementById('calc-output-model');
+    var summaryOutput = document.getElementById('calc-output-summary');
+    var applyCta = document.getElementById('calc-apply-cta');
+
+    function calculateScope() {
+      if (!endpointsRange || !assetCountLabel || !modelOutput || !summaryOutput) return;
+      var count = parseInt(endpointsRange.value, 10);
+      assetCountLabel.textContent = count;
+
+      var model = "Targeted Sprint (2–4 Weeks)";
+      var text = "Suited for focused infrastructure remediation, baseline API automation, and quick-win exposure mitigation.";
+
+      if (count > 800 || complianceSelect.value === 'itsg' || complianceSelect.value === 'fedramp') {
+        model = "Enterprise Retainer / Program Overseer (Ongoing)";
+        text = "High-assurance environments requiring dedicated threat governance, compliance orchestration, and multi-team advisory.";
+      } else if (count > 250 || complianceSelect.value === 'soc') {
+        model = "Comprehensive Architecture Overhaul (6–10 Weeks)";
+        text = "Mid-market scale: deep CI/CD security gate integration, complete multi-cloud IAM overhaul, and audit readiness.";
+      }
+
+      modelOutput.textContent = model;
+      summaryOutput.textContent = text;
+    }
+
+    if (endpointsRange) endpointsRange.addEventListener('input', calculateScope);
+    if (serviceSelect) serviceSelect.addEventListener('change', calculateScope);
+    if (complianceSelect) complianceSelect.addEventListener('change', calculateScope);
+
+    if (applyCta) {
+      applyCta.addEventListener('click', function() {
+        var subjectInput = document.getElementById('contact-subject');
+        var messageInput = document.getElementById('contact-message');
+        if (subjectInput && messageInput) {
+          subjectInput.value = "Scope Consultation: " + serviceSelect.value.toUpperCase() + " (" + endpointsRange.value + " Assets)";
+          messageInput.value = "Hello DIIPESSH MISTRY,\n\nWe are looking to engage for " + serviceSelect.options[serviceSelect.selectedIndex].text + ".\n- Asset Footprint: " + endpointsRange.value + " endpoints/resources\n- Compliance Target: " + complianceSelect.options[complianceSelect.selectedIndex].text + "\n- Target Model: " + modelOutput.textContent + "\n\nPlease let us know your availability for an executive briefing.";
+        }
+      });
+    }
+
+    // ==========================================================================
+    // 5. WEB3FORMS CLIENT SUBMISSION WITH ACCESS KEY & OWASP VALIDATION
+    // ==========================================================================
+    var form = document.getElementById('consultation-form');
+    var errorBanner = document.getElementById('form-error-banner');
+    var submitBtn = document.getElementById('contact-submit-btn');
+    var lastSubmissionTime = 0;
+
+    function sanitizeHeader(str) {
+      if (typeof str !== 'string') return '';
+      return str.replace(/[\r\n\t]/g, ' ').trim();
+    }
+
+    function validateEmail(email) {
+      var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+      return emailRegex.test(email) && email.length <= 120;
+    }
+
+    function showFormError(message) {
+      if (errorBanner) {
+        errorBanner.className = 'form-feedback error';
+        errorBanner.textContent = message;
+        errorBanner.style.display = 'block';
+        errorBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function showFormSuccess(message) {
+      if (errorBanner) {
+        errorBanner.className = 'form-feedback success';
+        errorBanner.textContent = message;
+        errorBanner.style.display = 'block';
+        errorBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function clearFormFeedback() {
+      if (errorBanner) {
+        errorBanner.textContent = '';
+        errorBanner.style.display = 'none';
+      }
+    }
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearFormFeedback();
+
+        var now = Date.now();
+        if (now - lastSubmissionTime < 5000) {
+          showFormError('Please wait a few seconds before dispatching another request.');
+          return;
+        }
+
+        var nameInput = document.getElementById('contact-name');
+        var emailInput = document.getElementById('contact-email');
+        var subjectInput = document.getElementById('contact-subject');
+        var messageInput = document.getElementById('contact-message');
+
+        var rawName = nameInput ? nameInput.value.trim() : '';
+        var rawEmail = emailInput ? emailInput.value.trim() : '';
+        var rawSubject = subjectInput ? subjectInput.value.trim() : '';
+        var rawMessage = messageInput ? messageInput.value.trim() : '';
+
+        if (!rawName || rawName.length < 2 || rawName.length > 80) {
+          showFormError('Please enter a valid full name (2–80 characters).');
+          if (nameInput) nameInput.focus();
+          return;
+        }
+
+        if (!validateEmail(rawEmail)) {
+          showFormError('Please enter a valid corporate email address.');
+          if (emailInput) emailInput.focus();
+          return;
+        }
+
+        if (!rawMessage || rawMessage.length < 10 || rawMessage.length > 3000) {
+          showFormError('Please provide project scope details (10–3,000 characters).');
+          if (messageInput) messageInput.focus();
+          return;
+        }
+
+        var dangerousPatterns = /<\s*script\b|javascript:|data:\s*text\/html/i;
+        if (dangerousPatterns.test(rawName) || dangerousPatterns.test(rawSubject) || dangerousPatterns.test(rawMessage)) {
+          showFormError('Invalid characters or disallowed script content detected.');
+          return;
+        }
+
+        var safeName = sanitizeHeader(rawName);
+        var safeEmail = sanitizeHeader(rawEmail);
+        var safeSubject = sanitizeHeader(rawSubject || 'Executive Consultation Inquiry');
+
+        lastSubmissionTime = now;
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Transmitting Consultation Request...';
+        }
+
+        var payload = {
+          access_key: 'd911ae1a-7a33-4a10-a01b-17b703cca294',
+          name: safeName,
+          email: safeEmail,
+          subject: safeSubject,
+          message: rawMessage,
+          from_name: 'Exaltis Consultation Dispatch'
+        };
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        })
+        .then(function(res) {
+          return res.json();
+        })
+        .then(function(data) {
+          if (data.success) {
+            showFormSuccess('Consultation request dispatched successfully. Diipessh will review and respond shortly.');
+            form.reset();
+          } else {
+            showFormError(data.message || 'Transmission failed. Please try again or email diipessh@gmail.com directly.');
+          }
+        })
+        .catch(function() {
+          showFormError('Network or transmission error. Please try again or reach out to diipessh@gmail.com directly.');
+        })
+        .finally(function() {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Dispatch Consultation Request';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
