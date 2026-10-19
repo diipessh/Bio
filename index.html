@@ -12,7 +12,7 @@
   <style>
     /* ==========================================================================
        DESIGN SYSTEM: OCEAN BREEZE (PALETTE: #03045E, #0077B6, #00B4D8, #90E0EF, #CAF0F8)
-       LIGHT THEME ONLY — CLEAN, ARCHITECTURAL, POLISHED EXECUTIVE FINISH
+       LIGHT THEME (DEFAULT) & MIDNIGHT OCEAN DARK THEME OVERRIDES
        ========================================================================== */
     :root {
       --primary-deep: #03045e;      /* Deep Sapphire Navy */
@@ -38,6 +38,107 @@
       --container-max: 1240px;
     }
 
+    [data-theme="dark"] {
+      --primary-deep: #caf0f8;      /* Glacier Ice Blue for crisp headings */
+      --primary: #00b4d8;           /* High-contrast Pacific Cyan */
+      --accent: #90e0ef;            /* Sky Aqua */
+      --accent-soft: rgba(0, 180, 216, 0.25);
+      --surface-light: #0d1f3c;     /* Deep Slate Navy tint */
+      --canvas: #020617;            /* Deep Obsidian Slate Canvas */
+      --card-bg: #0b1528;           /* Solid Navy Surface for cards */
+      --text-main: #f0f6fc;         /* Crisp White-Silver for readability */
+      --text-secondary: #94a3b8;    /* Muted Cool Silver Slate */
+      --text-tertiary: #64748b;     /* Subdued Grey */
+      --border-subtle: #1e293b;     /* Dark Slate Border */
+      --border-accent: rgba(0, 180, 216, 0.4);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.55);
+    }
+
+    [data-theme="dark"] .site-header {
+      background: rgba(11, 21, 40, 0.95);
+    }
+
+    [data-theme="dark"] .mobile-menu-drawer {
+      background: #0b1528;
+    }
+
+    [data-theme="dark"] .hero-section {
+      background: linear-gradient(180deg, #0b1528 0%, var(--canvas) 100%);
+    }
+
+    [data-theme="dark"] .btn-outline {
+      background: #0b1528;
+      color: #caf0f8;
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .btn-header-resume {
+      background: #0d1f3c;
+      color: #caf0f8;
+      border-color: rgba(144, 224, 239, 0.3);
+    }
+
+    [data-theme="dark"] .skills-filter-btn {
+      background: #0b1528;
+      color: var(--text-secondary);
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .skills-filter-btn:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    [data-theme="dark"] .skills-filter-btn.active {
+      background: #0077b6;
+      color: #ffffff;
+      border-color: #0077b6;
+    }
+
+    [data-theme="dark"] .form-input,
+    [data-theme="dark"] .form-textarea,
+    [data-theme="dark"] .calc-select {
+      background: #020617;
+      color: #f0f6fc;
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .metric-box,
+    [data-theme="dark"] .cert-item,
+    [data-theme="dark"] .calc-results-box {
+      background: #020617;
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .firm-affiliation {
+      background: #0d1f3c;
+    }
+
+    [data-theme="dark"] .tech-pill {
+      background: #020617;
+      color: #caf0f8;
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .site-footer {
+      background: #0b1528;
+      border-top-color: #1e293b;
+    }
+
+    /* Seasonal Entrance Canvas */
+    #seasonal-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99999;
+      transition: opacity 1.2s ease-out;
+    }
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -57,6 +158,7 @@
       background: var(--canvas);
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     section[id] {
@@ -78,7 +180,6 @@
       padding: 0 28px;
     }
 
-    /* Clearance gutter on medium-to-large displays to ensure the fixed rail never overlaps content */
     @media (min-width: 769px) and (max-width: 1400px) {
       .container {
         padding-left: 72px;
@@ -145,10 +246,9 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    /* Executive Resume Download Button (Replaces Clock Widget) */
     .btn-header-resume {
       padding: 8px 16px;
       font-size: 0.86rem;
@@ -163,6 +263,7 @@
       align-items: center;
       gap: 6px;
       white-space: nowrap;
+      cursor: pointer;
     }
 
     .btn-header-resume:hover {
@@ -193,6 +294,11 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+    }
+
+    [data-theme="dark"] .btn-header-cta {
+      background: #0077b6;
+      color: #ffffff;
     }
 
     .btn-header-cta:hover {
@@ -247,7 +353,7 @@
       align-items: center;
       gap: 10px;
       padding: 18px 10px;
-      background: var(--primary-deep);
+      background: #03045e;
       border: 1px solid rgba(144, 224, 239, 0.35);
       border-radius: 26px;
       box-shadow: 0 10px 28px rgba(3, 4, 94, 0.32);
@@ -282,7 +388,7 @@
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--surface-light);
+      color: #caf0f8;
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       white-space: nowrap;
@@ -404,6 +510,12 @@
       cursor: pointer;
     }
 
+    [data-theme="dark"] .btn-primary {
+      background: #0077b6;
+      border-color: #0077b6;
+      color: #ffffff;
+    }
+
     .btn-primary:hover {
       background: var(--primary);
       border-color: var(--primary);
@@ -442,6 +554,10 @@
       box-shadow: var(--shadow-md);
       position: relative;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    [data-theme="dark"] .executive-card-lead {
+      background: #0b1528;
     }
 
     .executive-card-lead:hover {
@@ -501,6 +617,10 @@
       background: #ffffff;
     }
 
+    [data-theme="dark"] .metric-box:hover {
+      background: #0f1d38;
+    }
+
     .metric-value {
       font-size: 1.75rem;
       font-weight: 800;
@@ -530,6 +650,10 @@
       background: #e6f4fc;
       transform: translateX(4px);
       border-left-color: var(--accent);
+    }
+
+    [data-theme="dark"] .firm-affiliation:hover {
+      background: #13284c;
     }
 
     .firm-affiliation-title {
@@ -614,6 +738,10 @@
       box-shadow: var(--shadow-sm);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+    }
+
+    [data-theme="dark"] .experience-card {
+      background: #0b1528;
     }
 
     .experience-card:hover {
@@ -738,6 +866,10 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    [data-theme="dark"] .panel-box {
+      background: #0b1528;
+    }
+
     .panel-box:hover {
       box-shadow: 0 14px 34px rgba(3, 4, 94, 0.08);
       border-color: var(--border-accent);
@@ -810,6 +942,10 @@
       background: #ffffff;
       transform: translateX(8px);
       box-shadow: 0 6px 18px rgba(0, 119, 182, 0.12);
+    }
+
+    [data-theme="dark"] .cert-item:hover {
+      background: #0f1d38;
     }
 
     .cert-name {
@@ -887,6 +1023,10 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    [data-theme="dark"] .skill-card {
+      background: #0b1528;
+    }
+
     .skill-card:hover {
       border-color: var(--primary);
       box-shadow: 0 12px 28px rgba(0, 119, 182, 0.15);
@@ -934,6 +1074,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+    }
+
+    [data-theme="dark"] .service-card {
+      background: #0b1528;
     }
 
     .service-card:hover {
@@ -1000,6 +1144,10 @@
       padding: 44px;
       box-shadow: var(--shadow-md);
       transition: box-shadow 0.25s ease;
+    }
+
+    [data-theme="dark"] .calculator-wrapper {
+      background: #0b1528;
     }
 
     .calculator-wrapper:hover {
@@ -1102,6 +1250,10 @@
       color: var(--text-secondary);
     }
 
+    [data-theme="dark"] .calc-stat-summary {
+      background: #0b1528;
+    }
+
     /* ==========================================================================
        CONTACT & EXECUTIVE DISPATCH TERMINAL (ORIGINAL TWO-COLUMN PRESERVED)
        ========================================================================== */
@@ -1112,6 +1264,10 @@
       padding: 48px;
       box-shadow: var(--shadow-md);
       transition: box-shadow 0.25s ease;
+    }
+
+    [data-theme="dark"] .contact-card-main {
+      background: #0b1528;
     }
 
     .contact-card-main:hover {
@@ -1216,6 +1372,11 @@
       border-color: var(--primary);
       background: #ffffff;
       box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.15);
+    }
+
+    [data-theme="dark"] .form-input:focus,
+    [data-theme="dark"] .form-textarea:focus {
+      background: #020617;
     }
 
     .form-textarea {
@@ -1347,7 +1508,7 @@
       </ul>
 
       <div class="nav-actions">
-        <!-- Suggestion #2: Executive Resume Download Button (Replaces Clock Widget) -->
+        <!-- Resume PDF Direct Download -->
         <a href="Resume_Diipessh_Mistry.pdf" download="Resume_Diipessh_Mistry.pdf" class="btn-header-resume" title="Download Executive Resume (PDF)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -1356,6 +1517,11 @@
           </svg>
           Resume PDF
         </a>
+
+        <!-- Day / Night Mode Toggle Switch -->
+        <button id="theme-toggle-btn" class="btn-header-resume" title="Toggle Day/Night Mode" aria-label="Toggle Theme">
+          <span id="theme-toggle-icon">🌙</span>
+        </button>
 
         <a href="#contact" class="btn-header-cta">
           Consultation
@@ -1412,7 +1578,7 @@
             <h2 class="hero-headline-sub">Senior Security Engineer &bull; Vulnerability Management &bull; Cloud Security Architect</h2>
 
             <p class="hero-bio">
-              Over 15+ years of cross-domain IT infrastructure and security engineering experience, with 10+ years dedicated to cyber defense, vulnerability discovery, remediation pipelines, and attack surface elimination across multi-cloud (Azure, Google Cloud Platform, AWS), Windows, Linux, and industrial ICS/OT environments. Proven leadership serving Government of Canada critical assets, enterprise telematics, and high-assurance digital platforms.
+              Over 15+ years of cross-domain IT infrastructure and security engineering experience, with 10+ years dedicated to cyber defense, vulnerability discovery, remediation pipelines, and attack surface elimination across multi-cloud (Azure, Google Cloud Platform, AWS), Windows, Linux, and industrial ICS/OT environments<!--[cite: 1, 2] -->. Proven leadership serving Government of Canada critical assets, enterprise telematics, and high-assurance digital platforms<!--[cite: 2] -->.
             </p>
 
             <div class="hero-cta-group">
@@ -1478,7 +1644,7 @@
           <span class="section-tag">Career Trajectory</span>
           <h2 class="section-title">Professional Experience</h2>
           <p class="section-subtitle">
-            Demonstrated track record of delivering enterprise-scale threat protection, vulnerability automation, and security posture engineering across high-stakes environments.
+            Demonstrated track record of delivering enterprise-scale threat protection, vulnerability automation, and security posture engineering across high-stakes environments<!--[cite: 2] -->.
           </p>
         </div>
 
@@ -1497,11 +1663,11 @@
               </div>
             </div>
             <ul class="exp-bullet-list">
-              <li>Protect and harden internet-facing web assets and the cloud platform hosting the client's most critical public sector systems, closing misconfigurations before breaching compliance baselines.</li>
-              <li>Drive vulnerability management: execute recurring scans, steer remediation workflows with system owners, and report exposure through risk-management dashboards and executive briefings.</li>
-              <li>Detect and respond: analyze Microsoft Sentinel telemetry to identify and intercept bot attacks, malicious crawlers, and hostile activity targeting public assets.</li>
-              <li>Analyze malware samples and publish threat intelligence reports covering phishing, DLP events, and incidents induced by misconfigured cloud systems.</li>
-              <li>Designed phishing and vishing simulation programs and security awareness campaigns, complete with metric tracking dashboards presented directly to executive leadership.</li>
+              <li>Protect and harden internet-facing web assets and the cloud platform hosting the client's most critical public sector systems, closing misconfigurations before breaching compliance baselines<!--[cite: 2] -->.</li>
+              <li>Drive vulnerability management: execute recurring scans, steer remediation workflows with system owners, and report exposure through risk-management dashboards and executive briefings<!--[cite: 2] -->.</li>
+              <li>Detect and respond: analyze Microsoft Sentinel telemetry to identify and intercept bot attacks, malicious crawlers, and hostile activity targeting public assets<!--[cite: 2] -->.</li>
+              <li>Analyze malware samples and publish threat intelligence reports covering phishing, DLP events, and incidents induced by misconfigured cloud systems<!--[cite: 2] -->.</li>
+              <li>Designed phishing and vishing simulation programs and security awareness campaigns, complete with metric tracking dashboards presented directly to executive leadership<!--[cite: 2] -->.</li>
             </ul>
             <div class="tech-pill-row">
               <span class="tech-pill">Microsoft Sentinel</span>
@@ -1526,12 +1692,12 @@
               </div>
             </div>
             <ul class="exp-bullet-list">
-              <li>Automated vulnerability scanning and reporting via Bash and RESTful API integrations across Tenable.io (Nessus) and Qualys; automated Google Cloud Platform firewall rule configuration and asset tagging.</li>
-              <li>Conducted technical security assessments and penetration tests; architected robust security controls across AWS and GCP environments with timely remediation pipelines.</li>
-              <li>Executed comprehensive security design and impact reviews on proposed architectures before release to neutralize regressions and integrated automated security gates into CI/CD pipelines.</li>
-              <li>Enforced strict least-privilege access governance on Google Cloud (IAM, RBAC, service accounts, Cloud Firewall) and automated role provisioning through custom PowerShell and Bash portals.</li>
-              <li>Deployed and managed enterprise security tooling across the fleet: CrowdStrike Falcon, Tenable Nessus agents, Duo MFA, Splunk SIEM, and Zscaler.</li>
-              <li>Automated vulnerability audits, patch management, and baseline system hardening across heterogeneous operating systems (Windows, Linux) and network infrastructure.</li>
+              <li>Automated vulnerability scanning and reporting via Bash and RESTful API integrations across Tenable.io (Nessus) and Qualys; automated Google Cloud Platform firewall rule configuration and asset tagging<!--[cite: 1, 2] -->.</li>
+              <li>Conducted technical security assessments and penetration tests; architected robust security controls across AWS and GCP environments with timely remediation pipelines<!--[cite: 2] -->.</li>
+              <li>Executed comprehensive security design and impact reviews on proposed architectures before release to neutralize regressions and integrated automated security gates into CI/CD pipelines<!--[cite: 2] -->.</li>
+              <li>Enforced strict least-privilege access governance on Google Cloud (IAM, RBAC, service accounts, Cloud Firewall) and automated role provisioning through custom PowerShell and Bash portals<!--[cite: 1, 2] -->.</li>
+              <li>Deployed and managed enterprise security tooling across the fleet: CrowdStrike Falcon, Tenable Nessus agents, Duo MFA, Splunk SIEM, and Zscaler<!--[cite: 1, 2] -->.</li>
+              <li>Automated vulnerability audits, patch management, and baseline system hardening across heterogeneous operating systems (Windows, Linux) and network infrastructure<!--[cite: 2] -->.</li>
             </ul>
             <div class="tech-pill-row">
               <span class="tech-pill">Google Cloud Platform</span>
@@ -1559,9 +1725,9 @@
               </div>
             </div>
             <ul class="exp-bullet-list">
-              <li>Formulated industrial control system (ICS/OT) site-assessment methodologies to expose vulnerability postures and threat vectors across operational technology environments.</li>
-              <li>Authored compliance-ready consulting assessments and architecture roadmaps for mission-critical instrumentation, safety systems, and industrial networking.</li>
-              <li>Standardized reusable assessment templates, oversaw patch deployment procedures, and implemented advanced threat detection tooling within SCADA ecosystems.</li>
+              <li>Formulated industrial control system (ICS/OT) site-assessment methodologies to expose vulnerability postures and threat vectors across operational technology environments<!--[cite: 2, 3] -->.</li>
+              <li>Authored compliance-ready consulting assessments and architecture roadmaps for mission-critical instrumentation, safety systems, and industrial networking<!--[cite: 3] -->.</li>
+              <li>Standardized reusable assessment templates, oversaw patch deployment procedures, and implemented advanced threat detection tooling within SCADA ecosystems<!--[cite: 3] -->.</li>
             </ul>
             <div class="tech-pill-row">
               <span class="tech-pill">ICS / SCADA Security</span>
@@ -1584,8 +1750,8 @@
               </div>
             </div>
             <ul class="exp-bullet-list">
-              <li>Conducted vulnerability scanning, prioritized remediation tracking, and compliance validation utilizing Qualys.</li>
-              <li>Analyzed SIEM telemetry, deep network traffic packet captures, and host security event logs to generate actionable intelligence for stakeholders.</li>
+              <li>Conducted vulnerability scanning, prioritized remediation tracking, and compliance validation utilizing Qualys<!--[cite: 3] -->.</li>
+              <li>Analyzed SIEM telemetry, deep network traffic packet captures, and host security event logs to generate actionable intelligence for stakeholders<!--[cite: 3] -->.</li>
             </ul>
             <div class="tech-pill-row">
               <span class="tech-pill">SOC Operations</span>
@@ -1608,8 +1774,8 @@
               </div>
             </div>
             <ul class="exp-bullet-list">
-              <li>Resolved critical escalated operational and security incidents, monitored attack trends, and maintained enterprise firewall and IDS/IPS controls across data centers.</li>
-              <li>Led the province-wide executive rollout of the Government of Saskatchewan Next Generation Desktop and MDM platform, overseeing engineering personnel, incident workflows, and crisis simulation exercises.</li>
+              <li>Resolved critical escalated operational and security incidents, monitored attack trends, and maintained enterprise firewall and IDS/IPS controls across data centers<!--[cite: 1, 3] -->.</li>
+              <li>Led the province-wide executive rollout of the Government of Saskatchewan Next Generation Desktop and MDM platform, overseeing engineering personnel, incident workflows, and crisis simulation exercises<!--[cite: 3] -->.</li>
             </ul>
             <div class="tech-pill-row">
               <span class="tech-pill">Firewall &amp; IDS/IPS</span>
@@ -1633,7 +1799,7 @@
           <span class="section-tag">Formal Qualifications</span>
           <h2 class="section-title">Education &amp; Industry Certifications</h2>
           <p class="section-subtitle">
-            Rigorous academic foundation in computer networking coupled with globally recognized vendor and governance certifications.
+            Rigorous academic foundation in computer networking coupled with globally recognized vendor and governance certifications<!--[cite: 1, 2, 3] -->.
           </p>
         </div>
 
@@ -1652,19 +1818,19 @@
             <div class="edu-item">
               <div class="edu-degree">Master of Engineering (M.Eng) in Computer Networks</div>
               <div class="edu-school">Toronto Metropolitan University (formerly Ryerson University)</div>
-              <div class="edu-year">Toronto, ON &bull; Conferred October 2019</div>
+              <div class="edu-year">Toronto, ON &bull; Conferred October 2019<!--[cite: 1, 3] --></div>
             </div>
 
             <div class="edu-item">
               <div class="edu-degree">Post-Graduate Diploma, Information Technology Professionals</div>
               <div class="edu-school">Lambton College of Applied Arts and Technology</div>
-              <div class="edu-year">Sarnia, ON &bull; Conferred December 2011</div>
+              <div class="edu-year">Sarnia, ON &bull; Conferred December 2011<!--[cite: 3] --></div>
             </div>
 
             <div class="edu-item">
               <div class="edu-degree">Bachelor of Technology (B.Tech) in Computer Engineering</div>
               <div class="edu-school">Ganpat University</div>
-              <div class="edu-year">Gujarat, India &bull; Conferred August 2009</div>
+              <div class="edu-year">Gujarat, India &bull; Conferred August 2009<!--[cite: 3] --></div>
             </div>
           </div>
 
@@ -1681,7 +1847,7 @@
             <div class="cert-item">
               <div>
                 <div class="cert-name">CISSP &ndash; Certified Information Systems Security Professional</div>
-                <div class="cert-issuer">(ISC)² &bull; Global Cybersecurity Leadership Standard</div>
+                <div class="cert-issuer">(ISC)² &bull; Global Cybersecurity Leadership Standard<!--[cite: 1, 3] --></div>
               </div>
               <span class="cert-status-badge">Credentialed</span>
             </div>
@@ -1689,7 +1855,7 @@
             <div class="cert-item">
               <div>
                 <div class="cert-name">CCNA Routing &amp; Switching &bull; CCNA Security</div>
-                <div class="cert-issuer">Cisco Systems &bull; Enterprise Network Defense</div>
+                <div class="cert-issuer">Cisco Systems &bull; Enterprise Network Defense<!--[cite: 3] --></div>
               </div>
               <span class="cert-status-badge">Certified</span>
             </div>
@@ -1697,7 +1863,7 @@
             <div class="cert-item">
               <div>
                 <div class="cert-name">MCSA &ndash; Microsoft Certified Solutions Associate</div>
-                <div class="cert-issuer">Microsoft &bull; Server Infrastructure &amp; Identity</div>
+                <div class="cert-issuer">Microsoft &bull; Server Infrastructure &amp; Identity<!--[cite: 3] --></div>
               </div>
               <span class="cert-status-badge">Certified</span>
             </div>
@@ -1705,7 +1871,7 @@
             <div class="cert-item">
               <div>
                 <div class="cert-name">CompTIA Network+ &bull; CompTIA Project+</div>
-                <div class="cert-issuer">CompTIA &bull; Network Architecture &amp; Delivery Management</div>
+                <div class="cert-issuer">CompTIA &bull; Network Architecture &amp; Delivery Management<!--[cite: 3] --></div>
               </div>
               <span class="cert-status-badge">Certified</span>
             </div>
@@ -1713,7 +1879,7 @@
             <div class="cert-item">
               <div>
                 <div class="cert-name">Fortinet Network Security Expert (NSE 1, 2 &amp; 3)</div>
-                <div class="cert-issuer">Fortinet &bull; Firewall &amp; Perimeter Security</div>
+                <div class="cert-issuer">Fortinet &bull; Firewall &amp; Perimeter Security<!--[cite: 3] --></div>
               </div>
               <span class="cert-status-badge">Certified</span>
             </div>
@@ -1734,7 +1900,7 @@
           <span class="section-tag">Competencies &amp; Stack</span>
           <h2 class="section-title">Technical Arsenal</h2>
           <p class="section-subtitle">
-            Battle-tested engineering competencies across enterprise security platforms, orchestration scripting, and regulatory controls.
+            Battle-tested engineering competencies across enterprise security platforms, orchestration scripting, and regulatory controls<!--[cite: 2, 3] -->.
           </p>
         </div>
 
@@ -1752,84 +1918,84 @@
           <div class="skill-card" data-category="vuln">
             <div class="skill-category-title">Vulnerability Discovery</div>
             <div class="skill-card-name">Tenable.io &amp; Qualys VM</div>
-            <div class="skill-card-desc">End-to-end scanning orchestration, API automation, vulnerability prioritization, and enterprise patch verification.</div>
+            <div class="skill-card-desc">End-to-end scanning orchestration, API automation, vulnerability prioritization, and enterprise patch verification<!--[cite: 1, 2, 3] -->.</div>
           </div>
 
           <!-- Card 2: Cloud Platform Security -->
           <div class="skill-card" data-category="cloud">
             <div class="skill-category-title">Multi-Cloud Security</div>
             <div class="skill-card-name">GCP, Azure &amp; AWS Hardening</div>
-            <div class="skill-card-desc">Strict least-privilege IAM, service account posture, Cloud Firewall rule optimization, and multi-tenant isolation.</div>
+            <div class="skill-card-desc">Strict least-privilege IAM, service account posture, Cloud Firewall rule optimization, and multi-tenant isolation<!--[cite: 1, 2, 3] -->.</div>
           </div>
 
           <!-- Card 3: SIEM & Detection -->
           <div class="skill-card" data-category="vuln">
             <div class="skill-category-title">Detection &amp; SIEM</div>
             <div class="skill-card-name">Microsoft Sentinel &amp; Splunk</div>
-            <div class="skill-card-desc">KQL analytics, threat hunting queries, automated alert correlation, and hostile bot interception.</div>
+            <div class="skill-card-desc">KQL analytics, threat hunting queries, automated alert correlation, and hostile bot interception<!--[cite: 1, 2, 3] -->.</div>
           </div>
 
           <!-- Card 4: Endpoint & Identity Zero Trust -->
           <div class="skill-card" data-category="vuln cloud">
             <div class="skill-category-title">Endpoint &amp; Zero Trust</div>
             <div class="skill-card-name">CrowdStrike, Zscaler &amp; Duo</div>
-            <div class="skill-card-desc">Falcon EDR enterprise management, cloud-delivered proxy filtering, and multi-factor access authentication.</div>
+            <div class="skill-card-desc">Falcon EDR enterprise management, cloud-delivered proxy filtering, and multi-factor access authentication<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 5: Automation Scripting -->
           <div class="skill-card" data-category="automation">
             <div class="skill-category-title">Security Automation</div>
             <div class="skill-card-name">Bash &amp; PowerShell Scripting</div>
-            <div class="skill-card-desc">Automated vulnerability reporting pipelines, REST API workflows, and custom role provisioning portals.</div>
+            <div class="skill-card-desc">Automated vulnerability reporting pipelines, REST API workflows, and custom role provisioning portals<!--[cite: 1, 2, 3] -->.</div>
           </div>
 
           <!-- Card 6: DevSecOps Pipelines -->
           <div class="skill-card" data-category="automation cloud">
             <div class="skill-category-title">DevSecOps Integration</div>
             <div class="skill-card-name">CI/CD Pipeline Security Gates</div>
-            <div class="skill-card-desc">Pre-commit vulnerability auditing, dynamic application analysis, and container security integration.</div>
+            <div class="skill-card-desc">Pre-commit vulnerability auditing, dynamic application analysis, and container security integration<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 7: DAST & Application Defense -->
           <div class="skill-card" data-category="vuln automation">
             <div class="skill-category-title">Application Security</div>
             <div class="skill-card-name">Aqua &amp; Netsparker DAST</div>
-            <div class="skill-card-desc">Dynamic application scanning, container image posture audits, and web application attack surface minimization.</div>
+            <div class="skill-card-desc">Dynamic application scanning, container image posture audits, and web application attack surface minimization<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 8: Network Perimeter & Firewalls -->
           <div class="skill-card" data-category="cloud">
             <div class="skill-category-title">Network Defense</div>
             <div class="skill-card-name">FortiGate, SonicWall &amp; IDS/IPS</div>
-            <div class="skill-card-desc">Deep packet inspection, enterprise gateway policies, intrusion detection/prevention, and perimeter defense baselining.</div>
+            <div class="skill-card-desc">Deep packet inspection, enterprise gateway policies, intrusion detection/prevention, and perimeter defense baselining<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 9: Canadian Public Sector Compliance -->
           <div class="skill-card" data-category="compliance">
             <div class="skill-category-title">Public Sector Compliance</div>
             <div class="skill-card-name">ITSG-33 &amp; Government of Canada PBMM</div>
-            <div class="skill-card-desc">Government of Canada security control cataloging, FedRAMP alignment, SOC 2 readiness, and risk reporting.</div>
+            <div class="skill-card-desc">Government of Canada security control cataloging, FedRAMP alignment, SOC 2 readiness, and risk reporting<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 10: Enterprise Governance Standards -->
           <div class="skill-card" data-category="compliance">
             <div class="skill-category-title">Enterprise Governance</div>
             <div class="skill-card-name">SOC 2, ISO 27001 &amp; CMMC L2</div>
-            <div class="skill-card-desc">Multi-cloud compliance alignment, security controls gap analysis, audit readiness, and technical evidence validation.</div>
+            <div class="skill-card-desc">Multi-cloud compliance alignment, security controls gap analysis, audit readiness, and technical evidence validation<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 11: Operational Technology & ICS/SCADA -->
           <div class="skill-card" data-category="compliance">
             <div class="skill-category-title">Industrial Security</div>
             <div class="skill-card-name">ICS / SCADA Posture Assessment</div>
-            <div class="skill-card-desc">Operational technology security methodologies, safety instrumentation analysis, and segmented zone audits.</div>
+            <div class="skill-card-desc">Operational technology security methodologies, safety instrumentation analysis, and segmented zone audits<!--[cite: 2, 3] -->.</div>
           </div>
 
           <!-- Card 12: Human Risk & Social Engineering -->
           <div class="skill-card" data-category="compliance">
             <div class="skill-category-title">Human Risk Engineering</div>
             <div class="skill-card-name">KnowBe4 Phishing &amp; Vishing</div>
-            <div class="skill-card-desc">High-fidelity simulation campaign design, executive risk briefings, and metric-tracked employee awareness programs.</div>
+            <div class="skill-card-desc">High-fidelity simulation campaign design, executive risk briefings, and metric-tracked employee awareness programs<!--[cite: 2, 3] -->.</div>
           </div>
 
         </div>
@@ -1858,7 +2024,7 @@
               <div class="service-num">PRACTICE // 01</div>
               <h3 class="service-title">Enterprise Vulnerability Management</h3>
               <p class="service-description">
-                Building scalable, repeatable vulnerability discovery pipelines. Automating scanning routines across Tenable and Qualys with programmatic ticket creation and stakeholder reporting.
+                Building scalable, repeatable vulnerability discovery pipelines. Automating scanning routines across Tenable and Qualys with programmatic ticket creation and stakeholder reporting<!--[cite: 1, 2, 3] -->.
               </p>
             </div>
             <ul class="service-deliverables">
@@ -1873,7 +2039,7 @@
               <div class="service-num">PRACTICE // 02</div>
               <h3 class="service-title">Cloud Infrastructure Hardening</h3>
               <p class="service-description">
-                Securing Microsoft Azure and Google Cloud environments against configuration drift and lateral movement. Rigorous enforcement of least-privilege IAM and granular Cloud Firewall governance.
+                Securing Microsoft Azure and Google Cloud environments against configuration drift and lateral movement. Rigorous enforcement of least-privilege IAM and granular Cloud Firewall governance<!--[cite: 1, 2] -->.
               </p>
             </div>
             <ul class="service-deliverables">
@@ -1888,7 +2054,7 @@
               <div class="service-num">PRACTICE // 03</div>
               <h3 class="service-title">vCISO &amp; Regulatory Alignment</h3>
               <p class="service-description">
-                Executive cybersecurity oversight for scaling organizations and public sector contractors. Navigating complex compliance baselines including ITSG-33, PBMM, ISO 27001, and SOC 2.
+                Executive cybersecurity oversight for scaling organizations and public sector contractors. Navigating complex compliance baselines including ITSG-33, PBMM, ISO 27001, and SOC 2<!--[cite: 2, 3] -->.
               </p>
             </div>
             <ul class="service-deliverables">
@@ -2117,10 +2283,152 @@
   </footer>
 
   <!-- ==========================================================================
-       SCRIPTS: SMOOTH VERTICAL GLIDE & WEB3FORMS INTEGRATION
+       SCRIPTS: THEME CONTROLLER, SEASONAL ENTRANCE, SMOOTH GLIDE & WEB3FORMS
        ========================================================================== -->
   <script>
-    // 1. Left-Side Vertical Rail: Reveals when scrolling past hero name and glides smoothly with scroll
+    // 1. Automatic Time-Based Day/Night Theme (7 PM to 7 AM dark, with local storage override)
+    function initThemeController() {
+      var toggleBtn = document.getElementById('theme-toggle-btn');
+      var toggleIcon = document.getElementById('theme-toggle-icon');
+      var savedTheme = localStorage.getItem('diipessh_theme');
+
+      var currentHour = new Date().getHours();
+      var isNightTime = currentHour >= 19 || currentHour < 7;
+      var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      var initialTheme = 'light';
+      if (savedTheme) {
+        initialTheme = savedTheme;
+      } else if (isNightTime || systemPrefersDark) {
+        initialTheme = 'dark';
+      }
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (toggleIcon) {
+          toggleIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+      }
+
+      applyTheme(initialTheme);
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function() {
+          var current = document.documentElement.getAttribute('data-theme') || 'light';
+          var nextTheme = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('diipessh_theme', nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+    }
+    initThemeController();
+
+    // 2. Transient Seasonal Entrance Animation (3.8s initial session flair)
+    function initSeasonalEntrance() {
+      if (sessionStorage.getItem('diipessh_season_seen')) return;
+
+      var now = new Date();
+      var month = now.getMonth();
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      var isSouthern = /Australia|Sydney|Melbourne|Brisbane|Perth|Adelaide|Auckland|Johannesburg|Buenos_Aires|Santiago|Sao_Paulo/i.test(tz);
+
+      var season = 'spring';
+      if (month >= 2 && month <= 4) season = isSouthern ? 'autumn' : 'spring';
+      else if (month >= 5 && month <= 7) season = isSouthern ? 'winter' : 'summer';
+      else if (month >= 8 && month <= 10) season = isSouthern ? 'spring' : 'autumn';
+      else season = isSouthern ? 'summer' : 'winter';
+
+      var canvas = document.createElement('canvas');
+      canvas.id = 'seasonal-canvas';
+      document.body.appendChild(canvas);
+      var ctx = canvas.getContext('2d');
+
+      var width = (canvas.width = window.innerWidth);
+      var height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', function() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      var particles = [];
+      var count = season === 'summer' ? 1 : 45;
+
+      for (var i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * -height * 0.5,
+          size: Math.random() * 8 + 6,
+          speedX: season === 'autumn' ? Math.random() * 3 + 2 : (Math.random() - 0.5) * 1.5,
+          speedY: Math.random() * 2 + 1.2,
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 2,
+          color: season === 'autumn'
+            ? ['#d97706', '#c2410c', '#b45309', '#eab308'][Math.floor(Math.random() * 4)]
+            : season === 'winter'
+            ? 'rgba(144, 224, 239, 0.85)'
+            : 'rgba(251, 207, 232, 0.85)'
+        });
+      }
+
+      var animFrameId;
+      var startTime = performance.now();
+
+      function render(time) {
+        var elapsed = time - startTime;
+        ctx.clearRect(0, 0, width, height);
+
+        if (season === 'summer') {
+          var progress = Math.min(elapsed / 3000, 1);
+          var gradient = ctx.createRadialGradient(
+            width * 0.5, height * 0.15, 10,
+            width * 0.5, height * 0.15, width * 0.75 * progress
+          );
+          gradient.addColorStop(0, 'rgba(254, 240, 138, 0.35)');
+          gradient.addColorStop(0.5, 'rgba(253, 224, 71, 0.15)');
+          gradient.addColorStop(1, 'rgba(253, 224, 71, 0)');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+        } else {
+          for (var j = 0; j < particles.length; j++) {
+            var p = particles[j];
+            p.x += p.speedX;
+            p.y += p.speedY;
+            p.rotation += p.rotSpeed;
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.fillStyle = p.color;
+
+            ctx.beginPath();
+            if (season === 'winter') {
+              ctx.arc(0, 0, p.size * 0.35, 0, Math.PI * 2);
+            } else {
+              ctx.ellipse(0, 0, p.size, p.size * 0.5, 0, 0, Math.PI * 2);
+            }
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+
+        if (elapsed < 3800) {
+          animFrameId = requestAnimationFrame(render);
+        } else {
+          canvas.style.opacity = '0';
+          setTimeout(function() {
+            cancelAnimationFrame(animFrameId);
+            if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+            sessionStorage.setItem('diipessh_season_seen', 'true');
+          }, 1200);
+        }
+      }
+
+      animFrameId = requestAnimationFrame(render);
+    }
+    initSeasonalEntrance();
+
+    // 3. Left-Side Vertical Rail: Reveals when scrolling past hero name and glides smoothly with scroll
     var heroTitle = document.getElementById('hero-name-original');
     var verticalRail = document.getElementById('frozen-vertical-rail');
 
@@ -2160,7 +2468,7 @@
     window.addEventListener('resize', updateVerticalRail);
     updateVerticalRail();
 
-    // 2. Mobile Navigation Drawer Toggle
+    // 4. Mobile Navigation Drawer Toggle
     var mobileToggle = document.getElementById('mobile-toggle');
     var mobileDrawer = document.getElementById('mobile-drawer');
     if (mobileToggle && mobileDrawer) {
@@ -2174,7 +2482,7 @@
       });
     }
 
-    // 3. Technical Arsenal Category Filter (Multi-tag supporting logic)
+    // 5. Technical Arsenal Category Filter (Multi-tag supporting logic)
     var filterButtons = document.querySelectorAll('.skills-filter-btn');
     var skillCards = document.querySelectorAll('.skill-card');
 
@@ -2195,7 +2503,7 @@
       });
     });
 
-    // 4. Interactive Scope Estimator Logic
+    // 6. Interactive Scope Estimator Logic
     var serviceSelect = document.getElementById('calc-service');
     var endpointsRange = document.getElementById('calc-endpoints');
     var assetCountLabel = document.getElementById('calc-asset-count');
@@ -2240,7 +2548,7 @@
     }
 
     // ==========================================================================
-    // 5. WEB3FORMS CLIENT SUBMISSION WITH ACCESS KEY & OWASP VALIDATION
+    // 7. WEB3FORMS CLIENT SUBMISSION WITH ACCESS KEY & OWASP VALIDATION
     // ==========================================================================
     var form = document.getElementById('consultation-form');
     var errorBanner = document.getElementById('form-error-banner');
